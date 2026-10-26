@@ -1,0 +1,11 @@
+summands p(log p - log q): [ 2.601335 -0.011849]
+clip=0.0: a clamped=False P_U=1.0000 g_a=-0.850000 g_a-sum(q g)=-0.850000 dlog q_a/step=+0.850000 max|analytic-FD|=5.70e-10 max|v1.1-analytic|=0.00e+00
+   after 20 SGD steps (lr 0.5): q_a 0.0500 -> 0.7969
+clip=0.05: a clamped=True P_U=0.1000 g_a=+0.005000 g_a-sum(q g)=+0.005000 dlog q_a/step=-0.005000 max|analytic-FD|=4.51e-11 max|v1.1-analytic|=6.07e-18
+   after 20 SGD steps (lr 0.5): q_a 0.0500 -> 0.0476
+random (200 cases, V=50): max|analytic-FD grad| = 9.61e-10
+max relative KL error vs 50-digit reference, by logit-perturbation sigma:
+  sigma=1e-06: direct p(logp-logq)=2.4e-02; -sum p s (Barron)=5.8e-10; log1p(sum p(expm1 d-d))=1.4e-10; fp32 direct=1.2e+07; fp32 Barron=3.7e-01
+  sigma=0.0001: direct p(logp-logq)=5.4e-06; -sum p s (Barron)=5.0e-12; log1p(sum p(expm1 d-d))=1.2e-12; fp32 direct=1.9e+03; fp32 Barron=2.7e-03
+  sigma=0.01: direct p(logp-logq)=1.6e-09; -sum p s (Barron)=5.5e-14; log1p(sum p(expm1 d-d))=8.9e-15; fp32 direct=6.3e-01; fp32 Barron=3.4e-05
+  sigma=0.5: direct p(logp-logq)=1.1e-13; -sum p s (Barron)=2.1e-15; log1p(sum p(expm1 d-d))=1.4e-15; fp32 direct=8.4e-05; fp32 Barron=1.1e-06
