@@ -1,0 +1,9 @@
+clip-none            AUC_G 0.576  sigma_tot2 0.0356 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0147 -> bound +0.88 (measured split-half r +0.02); tau_hat2 +0.0027
+clip-0.2             AUC_G 0.533  sigma_tot2 0.0284 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0075 -> bound +0.73 (measured split-half r -0.03); tau_hat2 +0.0014
+clip-0.05            AUC_G 0.523  sigma_tot2 0.0281 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0072 -> bound +0.71 (measured split-half r +0.00); tau_hat2 +0.0003
+clip-0.01            AUC_G 0.525  sigma_tot2 0.0591 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0382 -> bound +0.96 (measured split-half r +0.05); tau_hat2 -0.0012
+clip-1e-6            AUC_G 0.502  sigma_tot2 0.0520 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0311 -> bound +0.95 (measured split-half r +0.01); tau_hat2 +0.0028
+clip-none_nothink    AUC_G 0.579  sigma_tot2 0.0331 2sigma_a2 0.0334 sigma_roll2 0.0028 R -0.0003 -> bound +nan (measured split-half r +0.04); tau_hat2 +0.0015
+clip-0.05_nothink    AUC_G 0.521  sigma_tot2 0.0377 2sigma_a2 0.0334 sigma_roll2 0.0028 R +0.0043 -> bound -0.85 (measured split-half r -0.03); tau_hat2 +0.0006
+clip-none_lr3e-4     AUC_G 0.517  sigma_tot2 0.0253 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0044 -> bound +0.44 (measured split-half r -0.02); tau_hat2 +0.0015
+clip-0.05_lr3e-4     AUC_G 0.506  sigma_tot2 0.0214 2sigma_a2 0.0209 sigma_roll2 0.0016 R +0.0005 -> bound +nan (measured split-half r -0.05); tau_hat2 +0.0010

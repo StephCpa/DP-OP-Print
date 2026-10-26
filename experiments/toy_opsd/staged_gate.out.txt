@@ -1,0 +1,9 @@
+clip-none            r_11 +0.029 -> projected r_22 +0.056 (stop); 8-model split-half r +0.021
+clip-0.2             r_11 +0.009 -> projected r_22 +0.019 (stop); 8-model split-half r -0.031
+clip-0.05            r_11 +0.049 -> projected r_22 +0.093 (stop); 8-model split-half r +0.004
+clip-0.01            r_11 +0.038 -> projected r_22 +0.073 (stop); 8-model split-half r +0.047
+clip-1e-6            r_11 -0.004 -> projected r_22 -0.008 (stop); 8-model split-half r +0.014
+clip-none_nothink    r_11 +0.021 -> projected r_22 +0.041 (stop); 8-model split-half r +0.039
+clip-0.05_nothink    r_11 -0.024 -> projected r_22 -0.050 (stop); 8-model split-half r -0.034
+clip-none_lr3e-4     r_11 +0.004 -> projected r_22 +0.008 (stop); 8-model split-half r -0.015
+clip-0.05_lr3e-4     r_11 -0.032 -> projected r_22 -0.067 (stop); 8-model split-half r -0.054
