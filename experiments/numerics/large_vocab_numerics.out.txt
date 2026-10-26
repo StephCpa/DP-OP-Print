@@ -1,0 +1,134 @@
+P1: OPSD loss path at V=151,936 (bf16 / fp32 vs fp64), T in {1.0, 1.1}
+dtype    regime                           clip   T         KL64   relErrL   relErrG    worstG   flips  sign
+bfloat16 correction site (top token -6)   0.05   1.0   9.33e-03  2.88e-01  7.78e-02  4.25e-01     0.0  1.00
+bfloat16 correction site (top token -6)   0.05   1.1   7.35e-03  3.14e-01  1.74e-01  7.23e-01     0.0  1.00
+bfloat16 correction site (top token -6)   1e-06  1.0  -6.01e-02  4.94e-02  6.21e-02  1.47e+00   413.3  1.00
+bfloat16 correction site (top token -6)   1e-06  1.1  -5.55e-02  8.74e-02  2.86e-01  1.32e+00   527.2  1.00
+bfloat16 correction site (top token -6)   None   1.0   1.97e-01  5.03e-02  2.82e-02  1.88e-01     0.0  1.00
+bfloat16 correction site (top token -6)   None   1.1   1.63e-01  5.60e-02  7.71e-02  3.55e-01     0.0  1.00
+bfloat16 diffuse (sd 0.1)                 0.05   1.0   4.93e-03  1.04e+00  8.24e-02  3.83e+03     0.0  0.94
+bfloat16 diffuse (sd 0.1)                 0.05   1.1   4.09e-03  1.05e+00  2.15e-01  6.02e+02     0.0  0.85
+bfloat16 diffuse (sd 0.1)                 1e-06  1.0  -2.69e-02  7.65e-02  4.32e-02  3.83e+03   505.3  0.84
+bfloat16 diffuse (sd 0.1)                 1e-06  1.1  -2.24e-02  8.88e-02  5.92e-01  2.53e+00   703.1  0.82
+bfloat16 diffuse (sd 0.1)                 None   1.0   4.93e-03  1.04e+00  8.24e-02  3.83e+03     0.0  0.94
+bfloat16 diffuse (sd 0.1)                 None   1.1   4.09e-03  1.05e+00  2.15e-01  6.02e+02     0.0  0.86
+bfloat16 diffuse (sd 0.5)                 0.05   1.0   1.22e-01  5.24e-02  2.49e-02  1.29e+00     0.0  0.98
+bfloat16 diffuse (sd 0.5)                 0.05   1.1   1.01e-01  7.59e-02  6.22e-02  3.89e+00     0.0  0.92
+bfloat16 diffuse (sd 0.5)                 1e-06  1.0  -1.15e-01  1.85e-02  1.79e-02  2.09e+00   350.9  0.96
+bfloat16 diffuse (sd 0.5)                 1e-06  1.1  -1.03e-01  3.12e-02  1.98e-01  2.47e+00   514.8  0.94
+bfloat16 diffuse (sd 0.5)                 None   1.0   1.22e-01  4.47e-02  2.49e-02  1.03e+00     0.0  0.98
+bfloat16 diffuse (sd 0.5)                 None   1.1   1.01e-01  7.10e-02  6.34e-02  1.21e+00     0.0  0.93
+bfloat16 near-equal (sd 1e-3)             0.05   1.0   1.13e-05  8.32e+00  4.42e+01  5.70e+06     0.0  0.46
+bfloat16 near-equal (sd 1e-3)             0.05   1.1   9.06e-06  7.46e+00  2.66e+01  1.23e+06     0.0  0.51
+bfloat16 near-equal (sd 1e-3)             1e-06  1.0  -1.91e-04  7.08e-01  1.02e+00  5.70e+06    25.1  0.58
+bfloat16 near-equal (sd 1e-3)             1e-06  1.1  -1.52e-04  6.72e-01  1.00e+00  1.23e+06    29.8  0.61
+bfloat16 near-equal (sd 1e-3)             None   1.0   1.13e-05  8.32e+00  4.42e+01  5.70e+06     0.0  0.46
+bfloat16 near-equal (sd 1e-3)             None   1.1   9.06e-06  7.46e+00  2.66e+01  1.23e+06     0.0  0.51
+float32  correction site (top token -6)   0.05   1.0   9.18e-03  2.12e-05  8.18e-06  2.60e-04     0.0  1.00
+float32  correction site (top token -6)   0.05   1.1   7.25e-03  1.81e-05  1.11e-05  1.38e-04     0.0  1.00
+float32  correction site (top token -6)   1e-06  1.0  -5.76e-02  5.30e-06  8.18e-06  5.50e-04     0.0  1.00
+float32  correction site (top token -6)   1e-06  1.1  -5.31e-02  1.11e-05  7.35e-06  4.79e-03     0.0  1.00
+float32  correction site (top token -6)   None   1.0   1.96e-01  1.87e-05  5.98e-06  3.09e-05     0.0  1.00
+float32  correction site (top token -6)   None   1.1   1.62e-01  9.33e-06  6.41e-06  3.64e-05     0.0  1.00
+float32  diffuse (sd 0.1)                 0.05   1.0   4.80e-03  7.98e-05  5.02e-06  3.06e-03     0.0  1.00
+float32  diffuse (sd 0.1)                 0.05   1.1   3.98e-03  1.30e-04  1.20e-05  3.93e-03     0.0  1.00
+float32  diffuse (sd 0.1)                 1e-06  1.0  -2.66e-02  9.71e-06  2.92e-06  2.37e-03     0.0  1.00
+float32  diffuse (sd 0.1)                 1e-06  1.1  -2.21e-02  1.41e-05  7.56e-06  2.11e-03     0.0  1.00
+float32  diffuse (sd 0.1)                 None   1.0   4.80e-03  7.98e-05  5.02e-06  3.06e-03     0.0  1.00
+float32  diffuse (sd 0.1)                 None   1.1   3.98e-03  1.30e-04  1.20e-05  3.93e-03     0.0  1.00
+float32  diffuse (sd 0.5)                 0.05   1.0   1.21e-01  5.30e-06  3.53e-06  7.49e-04     0.0  1.00
+float32  diffuse (sd 0.5)                 0.05   1.1   1.01e-01  9.71e-06  1.04e-05  8.86e-04     0.0  1.00
+float32  diffuse (sd 0.5)                 1e-06  1.0  -1.15e-01  2.65e-06  2.89e-06  1.48e-04     0.0  1.00
+float32  diffuse (sd 0.5)                 1e-06  1.1  -1.03e-01  6.48e-06  8.61e-06  4.54e-04     0.0  1.00
+float32  diffuse (sd 0.5)                 None   1.0   1.21e-01  8.72e-06  2.90e-06  7.49e-04     0.0  1.00
+float32  diffuse (sd 0.5)                 None   1.1   1.01e-01  9.71e-06  9.28e-06  8.86e-04     0.0  1.00
+float32  near-equal (sd 1e-3)             0.05   1.0   4.74e-07  5.25e-01  6.30e-04  3.16e-01     0.0  0.99
+float32  near-equal (sd 1e-3)             0.05   1.1   3.93e-07  5.37e-01  8.78e-04  6.68e-01     0.0  1.00
+float32  near-equal (sd 1e-3)             1e-06  1.0  -1.04e-04  6.15e-04  3.00e-06  4.43e-02     0.0  1.00
+float32  near-equal (sd 1e-3)             1e-06  1.1  -1.10e-04  1.27e-03  7.79e-06  3.10e-01     0.0  1.00
+float32  near-equal (sd 1e-3)             None   1.0   4.74e-07  5.25e-01  6.30e-04  3.16e-01     0.0  0.99
+float32  near-equal (sd 1e-3)             None   1.1   3.93e-07  5.37e-01  8.78e-04  6.68e-01     0.0  1.00
+[29s]
+
+P2: KL-value formulas in fp32 at V=151,936 vs fp64 log1p reference
+  sigma=1e-06: KL~3.86e-13  fp32 direct=2.1e+06  fp32 Barron=3.1e-01  fp32 log1p=6.6e-02
+  sigma=0.0001: KL~3.13e-09  fp32 direct=2.3e+02  fp32 Barron=4.0e-03  fp32 log1p=5.1e-04
+  sigma=0.01: KL~2.87e-05  fp32 direct=1.8e-01  fp32 Barron=6.3e-05  fp32 log1p=3.1e-05
+  sigma=0.1: KL~2.52e-03  fp32 direct=5.5e-03  fp32 Barron=5.8e-05  fp32 log1p=2.8e-05
+  sigma=0.5: KL~6.75e-02  fp32 direct=1.9e-04  fp32 Barron=5.6e-05  fp32 log1p=3.2e-05
+  fp64 log1p reference vs 40-digit mpmath (4 rows, V=151,936): max rel err 2.4e-11
+[55s]
+
+P3: synthetic LM head (V x 2048); error of Delta vs fp64 head on unrounded hidden state
+  level=   8 eps=0      truth median=0.00e+00  bias: bf16head=+0.00e+00 opsd_bf16=+0.00e+00 fp32head=+0.00e+00 fp32direct=+0.00e+00  prior=1.32e-04
+  level=   8 eps=0.003  truth median=2.85e-05  bias: bf16head=+1.11e-04 opsd_bf16=-9.60e-05 fp32head=+1.57e-05 fp32direct=+1.57e-05  prior=1.33e-04
+  level=   8 eps=0.01   truth median=3.09e-04  bias: bf16head=+1.38e-04 opsd_bf16=-4.95e-04 fp32head=+1.55e-05 fp32direct=+1.55e-05  prior=1.31e-04
+  level=   8 eps=0.03   truth median=2.76e-03  bias: bf16head=+1.31e-04 opsd_bf16=+2.52e-04 fp32head=+1.99e-05 fp32direct=+1.99e-05  prior=1.30e-04
+  level=   8 eps=0.1    truth median=3.06e-02  bias: bf16head=+6.99e-05 opsd_bf16=+6.20e-04 fp32head=+2.64e-06 fp32direct=+2.53e-06  prior=1.33e-04
+  level=   8 eps=0.3    truth median=2.71e-01  bias: bf16head=+1.02e-04 opsd_bf16=+4.76e-04 fp32head=+4.23e-05 fp32direct=+4.15e-05  prior=1.31e-04
+  level=  16 eps=0      truth median=0.00e+00  bias: bf16head=+0.00e+00 opsd_bf16=+0.00e+00 fp32head=+0.00e+00 fp32direct=+0.00e+00  prior=4.08e-04
+  level=  16 eps=0.003  truth median=2.07e-05  bias: bf16head=+1.14e-04 opsd_bf16=+5.55e-04 fp32head=+1.31e-05 fp32direct=+1.30e-05  prior=4.14e-04
+  level=  16 eps=0.01   truth median=2.10e-04  bias: bf16head=+1.40e-04 opsd_bf16=+4.52e-04 fp32head=+2.52e-05 fp32direct=+2.52e-05  prior=4.21e-04
+  level=  16 eps=0.03   truth median=1.89e-03  bias: bf16head=+3.00e-04 opsd_bf16=-9.97e-04 fp32head=+8.58e-06 fp32direct=+8.89e-06  prior=3.97e-04
+  level=  16 eps=0.1    truth median=2.08e-02  bias: bf16head=-1.45e-04 opsd_bf16=+5.92e-04 fp32head=+8.10e-05 fp32direct=+8.04e-05  prior=4.23e-04
+  level=  16 eps=0.3    truth median=1.90e-01  bias: bf16head=-4.13e-04 opsd_bf16=-3.87e-04 fp32head=-3.99e-05 fp32direct=-4.40e-05  prior=4.15e-04
+  level=  24 eps=0      truth median=0.00e+00  bias: bf16head=+0.00e+00 opsd_bf16=+0.00e+00 fp32head=+0.00e+00 fp32direct=+0.00e+00  prior=9.62e-04
+  level=  24 eps=0.003  truth median=1.29e-05  bias: bf16head=+3.51e-04 opsd_bf16=+1.62e-04 fp32head=+1.24e-05 fp32direct=+1.24e-05  prior=9.25e-04
+  level=  24 eps=0.01   truth median=1.90e-04  bias: bf16head=+5.54e-04 opsd_bf16=+2.02e-04 fp32head=+8.64e-06 fp32direct=+8.65e-06  prior=9.31e-04
+  level=  24 eps=0.03   truth median=1.67e-03  bias: bf16head=+7.20e-04 opsd_bf16=+1.32e-03 fp32head=+4.19e-05 fp32direct=+4.19e-05  prior=9.45e-04
+  level=  24 eps=0.1    truth median=2.04e-02  bias: bf16head=+1.53e-03 opsd_bf16=+1.26e-03 fp32head=+9.70e-05 fp32direct=+9.68e-05  prior=9.23e-04
+  level=  24 eps=0.3    truth median=1.50e-01  bias: bf16head=-5.53e-04 opsd_bf16=-3.98e-04 fp32head=-2.41e-04 fp32direct=-2.42e-04  prior=9.28e-04
+
+  floor at true Delta=0 (eps=0), mean bias [nats/token]; prior = sum_k p_k (1-p_k) s_k^2/12:
+   level=   8 bf16head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=1.32e-04  rel.err@truth~3e-04: +4.5e-01  @~3e-02: +2.8e-03
+   level=   8 bf16head_opsd_std    floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=1.32e-04  rel.err@truth~3e-04: +8.2e-01  @~3e-02: +5.4e-02
+   level=   8 fp32head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=1.32e-04  rel.err@truth~3e-04: +5.1e-02  @~3e-02: +3.8e-04
+   level=   8 fp32head_direct      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=1.32e-04  rel.err@truth~3e-04: +5.0e-02  @~3e-02: +3.7e-04
+   level=  16 bf16head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=4.08e-04  rel.err@truth~2e-04: +3.7e-01  @~2e-02: +3.3e-03
+   level=  16 bf16head_opsd_std    floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=4.08e-04  rel.err@truth~2e-04: -1.9e+00  @~2e-02: +3.8e-02
+   level=  16 fp32head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=4.08e-04  rel.err@truth~2e-04: +9.0e-02  @~2e-02: +2.4e-03
+   level=  16 fp32head_direct      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=4.08e-04  rel.err@truth~2e-04: +8.9e-02  @~2e-02: +2.2e-03
+   level=  24 bf16head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=9.62e-04  rel.err@truth~2e-04: +1.1e+00  @~2e-02: +6.3e-02
+   level=  24 bf16head_opsd_std    floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=9.62e-04  rel.err@truth~2e-04: -1.0e+00  @~2e-02: +4.6e-02
+   level=  24 fp32head_barron      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=9.62e-04  rel.err@truth~2e-04: +5.2e-02  @~2e-02: +1.2e-03
+   level=  24 fp32head_direct      floor=+0.00e+00 (highH +0.00e+00, lowH +0.00e+00) |p99|=0.00e+00 prior=9.62e-04  rel.err@truth~2e-04: +5.1e-02  @~2e-02: +1.2e-03
+[128s]
+
+P4: chunk mean (G) and max-over-16-chunks (G-Max) relative error, from P3 per-position errors
+  level=   8 eps=0.003  bf16head_barron      truth~2.8e-05: G +3.9e+00  G-Max +4.0e+00 (|p95| 4.1e+00)
+  level=   8 eps=0.003  bf16head_opsd_std    truth~2.8e-05: G -3.3e+00  G-Max +2.3e+01 (|p95| 4.1e+01)
+  level=   8 eps=0.003  fp32head_barron      truth~2.8e-05: G +5.5e-01  G-Max +5.6e-01 (|p95| 5.7e-01)
+  level=   8 eps=0.01   bf16head_barron      truth~3.1e-04: G +4.4e-01  G-Max +4.5e-01 (|p95| 4.6e-01)
+  level=   8 eps=0.01   bf16head_opsd_std    truth~3.1e-04: G -1.6e+00  G-Max +1.1e+00 (|p95| 2.3e+00)
+  level=   8 eps=0.01   fp32head_barron      truth~3.1e-04: G +5.0e-02  G-Max +4.9e-02 (|p95| 5.3e-02)
+  level=   8 eps=0.03   bf16head_barron      truth~2.8e-03: G +4.7e-02  G-Max +4.6e-02 (|p95| 5.1e-02)
+  level=   8 eps=0.03   bf16head_opsd_std    truth~2.8e-03: G +9.4e-02  G-Max +9.9e-01 (|p95| 1.6e+00)
+  level=   8 eps=0.03   fp32head_barron      truth~2.8e-03: G +7.2e-03  G-Max +7.3e-03 (|p95| 9.6e-03)
+  level=   8 eps=0.1    bf16head_barron      truth~3.1e-02: G +2.3e-03  G-Max +1.9e-03 (|p95| 3.5e-03)
+  level=   8 eps=0.1    bf16head_opsd_std    truth~3.1e-02: G +1.9e-02  G-Max +6.8e-02 (|p95| 1.1e-01)
+  level=   8 eps=0.1    fp32head_barron      truth~3.1e-02: G +8.0e-05  G-Max -4.4e-05 (|p95| 5.5e-04)
+  level=  16 eps=0.003  bf16head_barron      truth~2.5e-05: G +4.6e+00  G-Max +5.0e+00 (|p95| 5.8e+00)
+  level=  16 eps=0.003  bf16head_opsd_std    truth~2.5e-05: G +2.3e+01  G-Max +4.1e+01 (|p95| 5.5e+01)
+  level=  16 eps=0.003  fp32head_barron      truth~2.5e-05: G +5.3e-01  G-Max +5.0e-01 (|p95| 6.1e-01)
+  level=  16 eps=0.01   bf16head_barron      truth~2.5e-04: G +5.5e-01  G-Max +6.1e-01 (|p95| 7.5e-01)
+  level=  16 eps=0.01   bf16head_opsd_std    truth~2.5e-04: G +1.8e+00  G-Max +3.8e+00 (|p95| 5.1e+00)
+  level=  16 eps=0.01   fp32head_barron      truth~2.5e-04: G +1.0e-01  G-Max +9.8e-02 (|p95| 1.4e-01)
+  level=  16 eps=0.03   bf16head_barron      truth~2.3e-03: G +1.3e-01  G-Max +1.4e-01 (|p95| 1.9e-01)
+  level=  16 eps=0.03   bf16head_opsd_std    truth~2.3e-03: G -4.4e-01  G-Max -1.3e-01 (|p95| 3.2e-01)
+  level=  16 eps=0.03   fp32head_barron      truth~2.3e-03: G +3.7e-03  G-Max +1.7e-03 (|p95| 2.0e-02)
+  level=  16 eps=0.1    bf16head_barron      truth~2.3e-02: G -6.1e-03  G-Max -6.1e-03 (|p95| 2.3e-02)
+  level=  16 eps=0.1    bf16head_opsd_std    truth~2.3e-02: G +2.6e-02  G-Max +3.3e-02 (|p95| 7.5e-02)
+  level=  16 eps=0.1    fp32head_barron      truth~2.3e-02: G +3.5e-03  G-Max +4.1e-03 (|p95| 8.2e-03)
+  level=  24 eps=0.003  bf16head_barron      truth~1.9e-05: G +1.8e+01  G-Max +2.2e+01 (|p95| 2.6e+01)
+  level=  24 eps=0.003  bf16head_opsd_std    truth~1.9e-05: G +8.3e+00  G-Max +2.9e+01 (|p95| 4.4e+01)
+  level=  24 eps=0.003  fp32head_barron      truth~1.9e-05: G +6.5e-01  G-Max +6.1e-01 (|p95| 7.5e-01)
+  level=  24 eps=0.01   bf16head_barron      truth~2.4e-04: G +2.3e+00  G-Max +2.6e+00 (|p95| 3.1e+00)
+  level=  24 eps=0.01   bf16head_opsd_std    truth~2.4e-04: G +8.4e-01  G-Max +2.7e+00 (|p95| 4.0e+00)
+  level=  24 eps=0.01   fp32head_barron      truth~2.4e-04: G +3.6e-02  G-Max +3.6e-02 (|p95| 8.9e-02)
+  level=  24 eps=0.03   bf16head_barron      truth~2.0e-03: G +3.6e-01  G-Max +3.4e-01 (|p95| 4.5e-01)
+  level=  24 eps=0.03   bf16head_opsd_std    truth~2.0e-03: G +6.6e-01  G-Max +7.8e-01 (|p95| 1.1e+00)
+  level=  24 eps=0.03   fp32head_barron      truth~2.0e-03: G +2.1e-02  G-Max +3.2e-02 (|p95| 5.3e-02)
+  level=  24 eps=0.1    bf16head_barron      truth~2.4e-02: G +6.2e-02  G-Max +5.8e-02 (|p95| 8.7e-02)
+  level=  24 eps=0.1    bf16head_opsd_std    truth~2.4e-02: G +5.2e-02  G-Max +4.9e-02 (|p95| 8.6e-02)
+  level=  24 eps=0.1    fp32head_barron      truth~2.4e-02: G +4.0e-03  G-Max +5.3e-03 (|p95| 1.1e-02)
+done [128s]

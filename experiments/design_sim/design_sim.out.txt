@@ -1,0 +1,56 @@
+S1: reliability gate feasibility at per-model AUC 0.594 (paper's 1.7B G-Max); mu_b = 1 w.l.o.g.
+  raw split-half r [and 8-model Spearman-Brown]; '-' = impossible (heterogeneity alone exceeds the residual variance)
+  f_a = share of the in-vs-out score variance due to sample difficulty; CV = tau_b / mu_b
+  f_a                 CV=0.5            CV=1.0            CV=2.0            CV=3.0
+  0            0.03 [0.05]       0.11 [0.19]       0.37 [0.54]       0.67 [0.81]
+  0.5          0.06 [0.10]       0.20 [0.34]       0.62 [0.77]                 -
+  0.8          0.13 [0.23]       0.44 [0.61]                 -                 -
+  0.9          0.25 [0.40]       0.72 [0.84]                 -                 -
+  0.95         0.44 [0.61]                 -                 -                 -
+  0.98         0.83 [0.91]                 -                 -                 -
+
+  Monte Carlo check (N+ = 1000, 200 replications) of two cells:
+   f_a=0.9, CV=1.0: analytic r = 0.723, MC r = 0.723 (sd 0.013); MC AUC = 0.594 (target 0.594)
+   f_a=0.5, CV=1.0: analytic r = 0.203, MC r = 0.204 (sd 0.024); MC AUC = 0.594 (target 0.594)
+
+  Post-H0 upper bound: sigma_tot^2 = Var(l|in) + Var(l|out) on H0's model; sigma_a from theta0 (assumes training
+  leaves difficulty variance unchanged); sigma_roll = rollout part of sigma_e (two independent K=8 rollout sets):
+    R = sigma_tot^2 - 2 sigma_a^2;  r_raw <= (R - 2 sigma_roll^2) / (R - sigma_roll^2)   (sigma_e >= sigma_roll)
+    f_a=0.5, sigma_roll^2 = 0.25 x sigma_e^2: bound 0.88 (true r at CV=1: 0.20)
+    f_a=0.5, sigma_roll^2 = 0.50 x sigma_e^2: bound 0.72 (true r at CV=1: 0.20)
+    f_a=0.5, sigma_roll^2 = 1.00 x sigma_e^2: bound 0.20 (true r at CV=1: 0.20)
+    f_a=0.8, sigma_roll^2 = 0.25 x sigma_e^2: bound 0.90 (true r at CV=1: 0.44)
+    f_a=0.8, sigma_roll^2 = 0.50 x sigma_e^2: bound 0.78 (true r at CV=1: 0.44)
+    f_a=0.8, sigma_roll^2 = 1.00 x sigma_e^2: bound 0.44 (true r at CV=1: 0.44)
+    f_a=0.9, sigma_roll^2 = 0.25 x sigma_e^2: bound 0.94 (true r at CV=1: 0.72)
+    f_a=0.9, sigma_roll^2 = 0.50 x sigma_e^2: bound 0.88 (true r at CV=1: 0.72)
+    f_a=0.9, sigma_roll^2 = 1.00 x sigma_e^2: bound 0.72 (true r at CV=1: 0.72)
+[1s]
+
+S2: H1 test validity. Tests of beta_c > 0 (one-sided, alpha = 0.05) in v ~ c + d:
+  T1 v1.2 within-pair sign-flip placebo; T2 v1.1 any-4-of-8 placebo; T3 OLS HC3;
+  T4 OLS HC3 + 16 assignment-pattern fixed effects + cubic spline in d; T5 Freedman-Lane permutation (linear d)
+  N0 sharp null (no leakage)                       T1=0.047  T2=0.050  T3=0.043  T4=0.047  T5=0.050
+  N1 homogeneous leakage                           T1=0.057  T2=0.060  T3=0.067  T4=0.063  T5=0.063
+  N2 heterogeneous leakage (CV 1.5) indep. of c    T1=0.107  T2=0.127  T3=0.040  T4=0.040  T5=0.043
+  N3 = N2 + model offsets and scales               T1=0.127  T2=0.140  T3=0.070  T4=0.070  T5=0.077
+  N4 = N2 + noise heteroscedastic in c             T1=0.083  T2=0.090  T3=0.047  T4=0.043  T5=0.063
+  N5 = N2 + leakage nonlinear in d (rho_cd 0.5)    T1=0.137  T2=0.147  T3=0.047  T4=0.047  T5=0.070
+  A1 alternative beta_c = 0.15 (+ N2)              T1=0.883  T2=0.893  T3=0.770  T4=0.753  T5=0.797
+  A2 alternative beta_c = 0.30 (+ N2)              T1=1.000  T2=1.000  T3=0.997  T4=0.997  T5=0.997
+  (MC SE of a 5% rate with 300 replications ≈ 0.013; per-model AUC in these scenarios ≈ 0.557)
+[121s]
+
+S3: chunk-level model. Per rollout: 16 chunk-mean Deltas = exp(a + alpha_j + noise); leakage multiplies chunk j by
+    (1 - lam_j) for members. 'sparse': leakage on the sample's top-2 chunks only; 'diffuse': equal on all chunks.
+  sparse imprint  : AUC G 0.583, G-Max 0.603; gap +0.0195; SD(gap): one model 0.0054, mean of 8 models 0.0018
+  diffuse imprint : AUC G 0.577, G-Max 0.570; gap -0.0073; SD(gap): one model 0.0057, mean of 8 models 0.0016
+  H3 MDE (80% power, two-sided 5%) for gap(arm 1) - gap(arm 2): 8 vs 8 models 0.0068; 2 vs 2 models 0.0156
+  (true difference between the two arms here: +0.0268; same-split pairing across arms is ignored, which is conservative only if the arms' gap errors are not negatively correlated)
+
+  Chunk-1 spike (membership-independent, e.g. the template mismatch at t = 1), sparse imprint:
+   spike=0    (median chunk Delta ≈ 1): AUC G 0.583, G-Max 0.602, G-Max without chunk 1 0.600
+   spike=1    (median chunk Delta ≈ 1): AUC G 0.583, G-Max 0.603, G-Max without chunk 1 0.601
+   spike=3    (median chunk Delta ≈ 1): AUC G 0.583, G-Max 0.602, G-Max without chunk 1 0.601
+   spike=10   (median chunk Delta ≈ 1): AUC G 0.583, G-Max 0.594, G-Max without chunk 1 0.601
+done [139s]
