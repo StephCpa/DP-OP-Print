@@ -430,6 +430,32 @@ Items 1–6 are unchanged from v1.2 §7.
 - The v1.2 placebo argument ("the exact null is a within-pair sign flip") is right for the sharp null and wrong for H1's composite null. The test is replaced (changelog item 8).
 - v1.2's m_U is not a mass (changelog item 7).
 
+## Amendment A1 (2026-10-27, after the first H0 run)
+
+**Basis.** The first H0 run (main = thinking teacher, control = aligned templates; split 0A; one model each) and the follow-up analysis in `docs/results/h0-run-2026-10-27.md` §6–7. Neither arm replicated OP-Print (§1 there). The amendments below apply to every run from now on. None of them changes a hypothesis or a threshold.
+
+1. **Training padding.**
+   - Both arms of the first H0 run were *trained* with `prompt_padding_side=right` (the upstream OPSD default). The t = 1 logit was therefore read at a pad position for most samples (R1 audit §2.4, now confirmed in the training log).
+   - All further runs use left padding for both the teacher and the student prompts, and must pass a step-0 preflight: the trainer's t = 1 logits must match batch-size-1 references within 0.1 nats.
+   - The first H0 run is kept and labelled **"upstream-faithful replication (right-padded training): not replicated"**. The left-padded runs are labelled **"clean OPSD"**.
+   - The clip-off arm (H3) runs **only** with left padding, because without the clip the spurious t = 1 KL is trained in full.
+2. **θ0-matched AUCs for base-calibrated scores (H1′; H3 co-primary).**
+   - On a single split, "θ − θ0" scores are biased whenever the split is imbalanced in θ0 difficulty and generic training shrinks high-Δ samples more. Both conditions held in the first run. They turned the raw calibrated AUCs of 0.53–0.556 into 0.50 once matched.
+   - Every per-model base-calibrated AUC is therefore also reported **θ0-matched**: AUC within θ0 deciles, plus the residual on a quadratic in log θ0 fitted on non-members and cross-fitted (`experiments/gpu_checks/h0_matched_auc.py`). The θ0-only placebo AUC is reported next to it.
+   - Pooled analyses over complement pairs cancel the imbalance by construction and remain primary.
+3. **Training diagnostics, logged for every model.**
+   - f_rm uses the pre-registered estimator 1 − mean_x D_θ(x)/D_θ0(x). The ratio of means is secondary.
+   - f_rm is reported for all tokens, without t = 1, and without segment 1.
+   - Δ₁(θ) − Δ₁(θ0), and whether that change is on the student side (via D_θ). In the first run the main arm's student log q(`<think>`) rose by ≈ 20 nats on a clamped entry. Prediction P6 in the H0 note tests whether right padding caused it.
+4. **LR fallback (§1.1).**
+   - The template-aligned arm at 5e-6 had f_rm ≈ 0 beyond segment 1, so the fallback grid applies to it.
+   - The main arm's f_rm (0.32 beyond segment 1) is generic thinking-style learning. It may not be used for selection without the no-r correction f_rm^r.
+5. **Order (replaces §5 steps 3 and 5 for the next runs).**
+   1. Preflight.
+   2. Complement models of split 0A, both arms, left-padded.
+   3. Clip-off arm, left-padded.
+   4. The LR fallback, if the clean H0 is also null.
+
 ## Appendix A: fp64 toy verification
 
 Unchanged; see `docs/archive/op-print-design-v1.2.md`, Appendix A, and `scripts/toy_clip_grad.py`. Its stated limits (V = 50, no bf16, log1p not run in fp32) are lifted by R2.

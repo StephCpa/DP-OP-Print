@@ -1,0 +1,106 @@
+
+== primary  (AUC = P(member score < non-member score); * = CI excludes 0.5)
+  [G all]
+    theta raw                                            0.468 [0.431, 0.505]
+    theta0 only (placebo)                                0.465 [0.427, 0.503]
+    difference theta - theta0                            0.536 [0.499, 0.573]
+    log-ratio theta / theta0                             0.516 [0.479, 0.551]
+    difference, stratified by theta0 decile              0.524 [0.480, 0.555]
+    log-ratio, stratified by theta0 decile               0.510 [0.473, 0.545]
+    residual on theta0 (non-member fit, cross-fitted)    0.503 [0.467, 0.540]
+    _slope log-ratio ~ log theta0 (non-members)          -0.08940398247120993
+    _theta0 mean in / out                                [0.22171975672245026, 0.2118658423423767]
+  [G-Max all]
+    theta raw                                            0.490 [0.455, 0.525]
+    theta0 only (placebo)                                0.481 [0.448, 0.515]
+    difference theta - theta0                            0.532 [0.497, 0.567]
+    log-ratio theta / theta0                             0.521 [0.483, 0.557]
+    difference, stratified by theta0 decile              0.538 [0.501, 0.575] *
+    log-ratio, stratified by theta0 decile               0.525 [0.488, 0.563]
+    residual on theta0 (non-member fit, cross-fitted)    0.522 [0.485, 0.558]
+    _slope log-ratio ~ log theta0 (non-members)          -0.05058656050709078
+    _theta0 mean in / out                                [1.1108109951019287, 1.0984665155410767]
+  [max-chunk(theta - theta0) all]
+    theta raw                                            0.518 [0.482, 0.556]
+    theta0 only (placebo)                                0.481 [0.447, 0.517]
+    difference theta - theta0                            0.518 [0.482, 0.556]
+    difference, stratified by theta0 decile              0.517 [0.480, 0.556]
+  [G nc1]
+    theta raw                                            0.466 [0.432, 0.506]
+    theta0 only (placebo)                                0.465 [0.433, 0.503]
+    difference theta - theta0                            0.537 [0.499, 0.570]
+    log-ratio theta / theta0                             0.515 [0.484, 0.553]
+    difference, stratified by theta0 decile              0.498 [0.460, 0.535]
+    log-ratio, stratified by theta0 decile               0.499 [0.466, 0.540]
+    residual on theta0 (non-member fit, cross-fitted)    0.495 [0.462, 0.537]
+    _slope log-ratio ~ log theta0 (non-members)          -0.06961885533849717
+    _theta0 mean in / out                                [0.14221616089344025, 0.13468679785728455]
+  [G-Max nc1]
+    theta raw                                            0.460 [0.421, 0.494] *
+    theta0 only (placebo)                                0.454 [0.415, 0.490] *
+    difference theta - theta0                            0.556 [0.522, 0.591] *
+    log-ratio theta / theta0                             0.523 [0.487, 0.558]
+    difference, stratified by theta0 decile              0.502 [0.473, 0.550]
+    log-ratio, stratified by theta0 decile               0.523 [0.488, 0.563]
+    residual on theta0 (non-member fit, cross-fitted)    0.529 [0.491, 0.568]
+    _slope log-ratio ~ log theta0 (non-members)          0.028118461754092845
+    _theta0 mean in / out                                [0.42815491557121277, 0.401008665561676]
+  [max-chunk(theta - theta0) nc1]
+    theta raw                                            0.517 [0.481, 0.554]
+    theta0 only (placebo)                                0.454 [0.422, 0.492] *
+    difference theta - theta0                            0.517 [0.481, 0.554]
+    difference, stratified by theta0 decile              0.492 [0.455, 0.529]
+
+== control  (AUC = P(member score < non-member score); * = CI excludes 0.5)
+  [G all]
+    theta raw                                            0.468 [0.433, 0.504]
+    theta0 only (placebo)                                0.467 [0.432, 0.501]
+    difference theta - theta0                            0.529 [0.494, 0.565]
+    log-ratio theta / theta0                             0.505 [0.471, 0.537]
+    difference, stratified by theta0 decile              0.493 [0.454, 0.530]
+    log-ratio, stratified by theta0 decile               0.488 [0.453, 0.522]
+    residual on theta0 (non-member fit, cross-fitted)    0.482 [0.446, 0.513]
+    _slope log-ratio ~ log theta0 (non-members)          -0.10548636855547715
+    _theta0 mean in / out                                [0.105384960770607, 0.09984774887561798]
+  [G-Max all]
+    theta raw                                            0.458 [0.423, 0.492] *
+    theta0 only (placebo)                                0.459 [0.422, 0.494] *
+    difference theta - theta0                            0.524 [0.489, 0.561]
+    log-ratio theta / theta0                             0.486 [0.448, 0.521]
+    difference, stratified by theta0 decile              0.481 [0.447, 0.522]
+    log-ratio, stratified by theta0 decile               0.484 [0.447, 0.521]
+    residual on theta0 (non-member fit, cross-fitted)    0.481 [0.443, 0.518]
+    _slope log-ratio ~ log theta0 (non-members)          -0.04925422432439464
+    _theta0 mean in / out                                [0.3518875241279602, 0.33041149377822876]
+  [max-chunk(theta - theta0) all]
+    theta raw                                            0.482 [0.448, 0.517]
+    theta0 only (placebo)                                0.459 [0.423, 0.493] *
+    difference theta - theta0                            0.482 [0.448, 0.517]
+    difference, stratified by theta0 decile              0.480 [0.446, 0.516]
+  [G nc1]
+    theta raw                                            0.470 [0.433, 0.502]
+    theta0 only (placebo)                                0.469 [0.433, 0.502]
+    difference theta - theta0                            0.532 [0.497, 0.570]
+    log-ratio theta / theta0                             0.516 [0.479, 0.552]
+    difference, stratified by theta0 decile              0.506 [0.469, 0.540]
+    log-ratio, stratified by theta0 decile               0.498 [0.460, 0.533]
+    residual on theta0 (non-member fit, cross-fitted)    0.489 [0.451, 0.526]
+    _slope log-ratio ~ log theta0 (non-members)          -0.07756708748242272
+    _theta0 mean in / out                                [0.0940420925617218, 0.08843249827623367]
+  [G-Max nc1]
+    theta raw                                            0.466 [0.429, 0.505]
+    theta0 only (placebo)                                0.461 [0.424, 0.502]
+    difference theta - theta0                            0.539 [0.499, 0.573]
+    log-ratio theta / theta0                             0.518 [0.484, 0.553]
+    difference, stratified by theta0 decile              0.504 [0.472, 0.547]
+    log-ratio, stratified by theta0 decile               0.511 [0.481, 0.550]
+    residual on theta0 (non-member fit, cross-fitted)    0.514 [0.479, 0.553]
+    _slope log-ratio ~ log theta0 (non-members)          -0.04350505259605297
+    _theta0 mean in / out                                [0.3075854480266571, 0.28606724739074707]
+  [max-chunk(theta - theta0) nc1]
+    theta raw                                            0.470 [0.438, 0.509]
+    theta0 only (placebo)                                0.461 [0.424, 0.495] *
+    difference theta - theta0                            0.470 [0.438, 0.509]
+    difference, stratified by theta0 decile              0.466 [0.432, 0.504]
+
+wrote data/h0/2026-10-27/h0_matched_auc.json

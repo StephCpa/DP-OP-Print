@@ -41,6 +41,7 @@ All of these run on CPU. Each experiment directory commits its outputs (`*.out.t
 | `scripts/render_pdf.py` | Renders the Markdown documents to PDF (python-markdown, then Node Playwright/Chromium) | seconds |
 | `experiments/gpu_checks/first_token_check.py` | Check 1 on GPU: is Δ₁ a genuine template effect? It compares the batch-size-1 reference to the padded paths and the pipeline, and decomposes Δ₁ (teacher `<think>` mass vs −log q_S(`<think>`)). | minutes |
 | `experiments/gpu_checks/gmax_rescore.py` | Check 2 from saved per-token Δ: G/G-Max without the opening tokens or segment, θ0 placebo for split imbalance, Δ₁ consistency across rollouts, truncation strata, f_rm by position | seconds |
+| `experiments/gpu_checks/h0_matched_auc.py` | θ0-matched AUCs (decile-stratified and cross-fitted residual) for base-calibrated scores. It separates leakage from split imbalance combined with level-dependent shrinkage. | ~1 min |
 | `experiments/gpu_checks/selftest.py` | Offline self-test of both checks (tiny random Qwen3, synthetic data) | ~30 s |
 | `experiments/toy_opsd/` | Toy OPSD simulator and an end-to-end dry run of H0/H1/H1′/H3 and the §1.0 diagnostic. `run_all.sh`, then `analyze.py`. Results are in `results.md`. | ~25 min |
 
