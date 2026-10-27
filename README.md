@@ -20,6 +20,7 @@ DP comparisons (H2), the top-k teacher (H4) and the numerical training ablation 
 | File | Description |
 |---|---|
 | `docs/op-print-design-v1.3.md` | **Current design.** It folds in the desk research below. |
+| `docs/results/h0-run-2026-10-27.md` | **First GPU run (H0, main vs template-aligned control), as reported.** Includes the reading and the pre-registered predictions for the two follow-up checks. |
 | `docs/results/research-report-2026-10-26.md` | **Desk research report.** Findings F1–F13 and the design changes they imply. |
 | `docs/verification/opsd-code-audit.md` | OPSD source audit: loss temperature, thinking-mode asymmetry, padding, step budget, clip semantics. |
 | `docs/archive/op-print-design-v1.2.md` / `.pdf` | v1.2 (English) |
@@ -38,9 +39,12 @@ All of these run on CPU. Each experiment directory commits its outputs (`*.out.t
 | `experiments/clip_mechanism/clip_mechanism.py` | Clamped logits are pushed down; negative-loss optima of the clipped loss; one-step direction of the clamped token; r_dir vs m_U | ~2 min |
 | `experiments/design_sim/design_sim.py` | Reliability-gate feasibility and post-H0 bound; validity of H1 tests (sign-flip placebo vs HC3); H3 MDE; chunk-1 spike | ~3 min |
 | `scripts/render_pdf.py` | Renders the Markdown documents to PDF (python-markdown, then Node Playwright/Chromium) | seconds |
+| `experiments/gpu_checks/first_token_check.py` | Check 1 on GPU: is Δ₁ a genuine template effect? It compares the batch-size-1 reference to the padded paths and the pipeline, and decomposes Δ₁ (teacher `<think>` mass vs −log q_S(`<think>`)). | minutes |
+| `experiments/gpu_checks/gmax_rescore.py` | Check 2 from saved per-token Δ: G/G-Max without the opening tokens or segment, θ0 placebo for split imbalance, Δ₁ consistency across rollouts, truncation strata, f_rm by position | seconds |
+| `experiments/gpu_checks/selftest.py` | Offline self-test of both checks (tiny random Qwen3, synthetic data) | ~30 s |
 | `experiments/toy_opsd/` | Toy OPSD simulator and an end-to-end dry run of H0/H1/H1′/H3 and the §1.0 diagnostic. `run_all.sh`, then `analyze.py`. Results are in `results.md`. | ~25 min |
 
-Requirements: `numpy`, `scipy`, `torch` (CPU is fine), `scikit-learn`, `mpmath`.
+Requirements: `numpy`, `scipy`, `torch` (CPU is fine), `scikit-learn`, `mpmath`. The `gpu_checks` scripts also need `transformers` and `peft`.
 
 ```
 python3 scripts/toy_clip_grad.py
