@@ -1,0 +1,80 @@
+{
+ "primary": {
+  "N": 1000,
+  "K_hist": {
+   "8": 800,
+   "32": 200
+  },
+  "K_exported": 8,
+  "L": 1024,
+  "Lmax": 1024,
+  "finish": {
+   "stop": 5260,
+   "length": 7540
+  },
+  "members": 500,
+  "missing_rollouts_in_npz": 0,
+  "prompt_roundtrip_mismatches": 0,
+  "delta1_spread_across_K": {
+   "theta_T1_0": {
+    "max": 0.9453563690185547,
+    "median": 0.0,
+    "mean": 0.031511964797973635
+   },
+   "theta_T1_1": {
+    "max": 0.8433704376220703,
+    "median": 0.0,
+    "mean": 0.02838063430786133
+   },
+   "theta0_T1_0": {
+    "max": 0.6302909851074219,
+    "median": 0.0,
+    "mean": 0.01903621292114258
+   },
+   "theta0_T1_1": {
+    "max": 0.5731353759765625,
+    "median": 0.0,
+    "mean": 0.017303497314453124
+   }
+  }
+ },
+ "control": {
+  "N": 1000,
+  "K_hist": {
+   "8": 800,
+   "32": 200
+  },
+  "K_exported": 8,
+  "L": 1024,
+  "Lmax": 1024,
+  "finish": {
+   "stop": 5389,
+   "length": 7411
+  },
+  "members": 500,
+  "missing_rollouts_in_npz": 0,
+  "prompt_roundtrip_mismatches": 0,
+  "delta1_spread_across_K": {
+   "theta_T1_0": {
+    "max": 0.9590249061584473,
+    "median": 0.0,
+    "mean": 0.018931006431579588
+   },
+   "theta_T1_1": {
+    "max": 0.8544559478759766,
+    "median": 0.0,
+    "mean": 0.016512128591537476
+   },
+   "theta0_T1_0": {
+    "max": 0.7680015563964844,
+    "median": 0.0,
+    "mean": 0.01740519878268242
+   },
+   "theta0_T1_1": {
+    "max": 0.6386134624481201,
+    "median": 0.0,
+    "mean": 0.01527031821012497
+   }
+  }
+ }
+}

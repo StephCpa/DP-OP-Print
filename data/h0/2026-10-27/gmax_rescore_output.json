@@ -1,0 +1,300 @@
+[
+ {
+  "file": "export/h0_primary_T1.1.npz",
+  "N": 1000,
+  "K": 8,
+  "members": 500,
+  "share_argmax_chunk1": 0.951875,
+  "share_argmax_chunk1_in_out": [
+   0.94675,
+   0.957
+  ],
+  "delta1_mean": 23.03665625,
+  "delta1_sd_between_samples": 1.8790916478177526,
+  "delta1_sd_within_sample_max": 0.0,
+  "delta1_sd_within_sample_median": 0.0,
+  "delta1_in_out": [
+   22.97215625,
+   23.10115625
+  ],
+  "truncation_rate_in_out": [
+   0.575,
+   0.59275
+  ],
+  "auc": {
+   "G | all tokens": {
+    "auc": 0.468392,
+    "ci": [
+     0.4339320514990655,
+     0.5068416716945129
+    ]
+   },
+   "G-Max | all tokens": {
+    "auc": 0.48966,
+    "ci": [
+     0.4549246597438186,
+     0.526857559319566
+    ]
+   },
+   "G | drop t=1": {
+    "auc": 0.462964,
+    "ci": [
+     0.42859143854196863,
+     0.5009063542463597
+    ]
+   },
+   "G-Max | drop t=1": {
+    "auc": 0.455672,
+    "ci": [
+     0.4191562830258991,
+     0.49427232513704394
+    ]
+   },
+   "G | drop first 4": {
+    "auc": 0.457496,
+    "ci": [
+     0.42373703171645544,
+     0.49321620442454983
+    ]
+   },
+   "G-Max | drop first 4": {
+    "auc": 0.442576,
+    "ci": [
+     0.4077146816853656,
+     0.48105396576361054
+    ]
+   },
+   "G | drop first 16": {
+    "auc": 0.471876,
+    "ci": [
+     0.43832758294649876,
+     0.5102536777920741
+    ]
+   },
+   "G-Max | drop first 16": {
+    "auc": 0.481676,
+    "ci": [
+     0.4464928413625975,
+     0.5193771403158721
+    ]
+   },
+   "G | from segment 2 (drop first 64)": {
+    "auc": 0.466108,
+    "ci": [
+     0.4333106324820968,
+     0.5024930063541315
+    ]
+   },
+   "G-Max | from segment 2 (drop first 64)": {
+    "auc": 0.459916,
+    "ci": [
+     0.42493087396652013,
+     0.4974304953356799
+    ]
+   },
+   "theta0 only (placebo: split difficulty imbalance)": {
+    "auc": 0.465112,
+    "ci": [
+     0.43049230780146003,
+     0.5014515929019457
+    ]
+   },
+   "CRN difference G_theta - G_theta0 | all tokens": {
+    "auc": 0.535564,
+    "ci": [
+     0.49750995687588534,
+     0.5704607085521951
+    ]
+   },
+   "CRN ratio G_theta / G_theta0 | all tokens": {
+    "auc": 0.516236,
+    "ci": [
+     0.476863251676229,
+     0.5524272544466178
+    ]
+   },
+   "CRN difference | from segment 2": {
+    "auc": 0.537132,
+    "ci": [
+     0.5006823449849456,
+     0.5725978291745182
+    ]
+   },
+   "theta0 only | from segment 2": {
+    "auc": 0.464872,
+    "ci": [
+     0.43094434923521296,
+     0.5022429605462203
+    ]
+   }
+  },
+  "truncation_strata": {
+   "majority of rollouts truncated": {
+    "n": 625,
+    "G | all tokens": 0.4614998360386949,
+    "G-Max | all tokens": 0.4783161173962945,
+    "G-Max | from segment 2 (drop first 64)": 0.4617970159042466
+   },
+   "majority finished": {
+    "n": 375,
+    "G | all tokens": 0.5026507809827842,
+    "G-Max | all tokens": 0.5300991905141945,
+    "G-Max | from segment 2 (drop first 64)": 0.48805723406681106
+   }
+  },
+  "f_rm_members": {
+   "all tokens": 0.37119601218639764,
+   "without t=1": 0.3468154647655618,
+   "without first segment": 0.3151105983970621
+  }
+ },
+ {
+  "file": "export/h0_control_T1.1.npz",
+  "N": 1000,
+  "K": 8,
+  "members": 500,
+  "share_argmax_chunk1": 0.255875,
+  "share_argmax_chunk1_in_out": [
+   0.254,
+   0.25775
+  ],
+  "delta1_mean": 1.226720703125,
+  "delta1_sd_between_samples": 0.6805492453411128,
+  "delta1_sd_within_sample_max": 0.0,
+  "delta1_sd_within_sample_median": 0.0,
+  "delta1_in_out": [
+   1.2479951171875,
+   1.2054462890625
+  ],
+  "truncation_rate_in_out": [
+   0.56625,
+   0.58675
+  ],
+  "auc": {
+   "G | all tokens": {
+    "auc": 0.46758,
+    "ci": [
+     0.4330232289858037,
+     0.5057089282023585
+    ]
+   },
+   "G-Max | all tokens": {
+    "auc": 0.458268,
+    "ci": [
+     0.4239845860250902,
+     0.4973990794962565
+    ]
+   },
+   "G | drop t=1": {
+    "auc": 0.469008,
+    "ci": [
+     0.43401829280715754,
+     0.5073539414330209
+    ]
+   },
+   "G-Max | drop t=1": {
+    "auc": 0.461808,
+    "ci": [
+     0.42738271511572545,
+     0.5005354726370739
+    ]
+   },
+   "G | drop first 4": {
+    "auc": 0.4688,
+    "ci": [
+     0.4341495371189596,
+     0.50708210096329
+    ]
+   },
+   "G-Max | drop first 4": {
+    "auc": 0.461872,
+    "ci": [
+     0.4282543297311246,
+     0.49998175060552774
+    ]
+   },
+   "G | drop first 16": {
+    "auc": 0.46806,
+    "ci": [
+     0.4330558477770641,
+     0.5053348169871615
+    ]
+   },
+   "G-Max | drop first 16": {
+    "auc": 0.464188,
+    "ci": [
+     0.4286917746459339,
+     0.5039114767673801
+    ]
+   },
+   "G | from segment 2 (drop first 64)": {
+    "auc": 0.469892,
+    "ci": [
+     0.43582455438854734,
+     0.5071440918288662
+    ]
+   },
+   "G-Max | from segment 2 (drop first 64)": {
+    "auc": 0.465508,
+    "ci": [
+     0.42954776048676796,
+     0.5055009238412711
+    ]
+   },
+   "theta0 only (placebo: split difficulty imbalance)": {
+    "auc": 0.466752,
+    "ci": [
+     0.43185458002688565,
+     0.5060442620679548
+    ]
+   },
+   "CRN difference G_theta - G_theta0 | all tokens": {
+    "auc": 0.529056,
+    "ci": [
+     0.48995547745728757,
+     0.5659278086216482
+    ]
+   },
+   "CRN ratio G_theta / G_theta0 | all tokens": {
+    "auc": 0.50474,
+    "ci": [
+     0.4667214374389236,
+     0.5408327830573494
+    ]
+   },
+   "CRN difference | from segment 2": {
+    "auc": 0.532344,
+    "ci": [
+     0.4930823851743909,
+     0.5697059496377125
+    ]
+   },
+   "theta0 only | from segment 2": {
+    "auc": 0.46862,
+    "ci": [
+     0.43399221864781823,
+     0.5065764887783695
+    ]
+   }
+  },
+  "truncation_strata": {
+   "majority of rollouts truncated": {
+    "n": 616,
+    "G | all tokens": 0.458101383265857,
+    "G-Max | all tokens": 0.44428981106612686,
+    "G-Max | from segment 2 (drop first 64)": 0.4594719973009447
+   },
+   "majority finished": {
+    "n": 384,
+    "G | all tokens": 0.48567086409031696,
+    "G-Max | all tokens": 0.48260421189752495,
+    "G-Max | from segment 2 (drop first 64)": 0.47742075553625707
+   }
+  },
+  "f_rm_members": {
+   "all tokens": 0.03801638940243646,
+   "without t=1": 0.04148523531841786,
+   "without first segment": -0.008899927162178578
+  }
+ }
+]
